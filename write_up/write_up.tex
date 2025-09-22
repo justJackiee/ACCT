@@ -170,4 +170,28 @@ $\Rightarrow n(p) \approx \sqrt{-2H * ln(1 - p)}$
 $\Rightarrow n(0.75) \approx \sqrt{-2 * 2048 * ln(1 - 0.75)} \approx 76$
 
 So there is 76 unique secrets to have a 75\% chance of a collision between two distinct secrets.
+
+\chapter{Reading Book}
+\section{Chapter 1}
+Kerckhoffs's Principle: must not be required to be secret, and it must be able to fall into the enemy's hands without causing inconvenience
+
+Definition: $k \leftarrow \{0, 1\}^\lambda$ means to sample k uniformly from the set of $\lambda$-bit strings.
+
+EAVESDROP algorithm: randomized algorithm that takes as input a ciphertext c and outputs a bit b.
+\section{Chapter 2}
+Encryption syntax: A symmetric key encryption scheme (SKE) is a tuple of three algorithms (Gen, Enc, Dec) such that:
+\begin{itemize}
+    \item KeyGen: a randomized algorithm that outputs a key $k \in K$.
+    \item Enc: a (possibly randomized) algorithm that takes a key $k \in K$ and plaintext $m \in M$ as input, and outputs a ciphertext $c \in C$.
+    \item Dec: a deterministic algorithm that takes a key $k \in K$ and ciphertext $c \in C$ as input, and outputs a plaintext $m \in M$.
+    \item With $K$ is the key space, $M$ is the message space, and $C$ is the ciphertext space.
+\end{itemize}
+
+SKE correctness: For every key $k \in K$ and message $m \in M$, if $c \leftarrow Enc(k, m)$, then $Dec(k, c) = m$.
+
+$\sum_{}^{}$ means is just a package name for “the encryption scheme,” and the dot notation 
+
+($\sum_{}^{}.KeyGen, \sum_{}^{}.Enc, \sum_{}^{}.Dec$) means the specific algorithm belonging to that scheme
+
+
 \end{document}
