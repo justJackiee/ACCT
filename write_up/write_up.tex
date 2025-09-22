@@ -1,0 +1,126 @@
+\documentclass[12pt, a4paper, oneside]{report}
+\usepackage{graphicx}
+\usepackage[utf8]{vietnam}
+\usepackage{hyperref}
+\usepackage[
+    inner = 2.5cm,
+    outer = 1.5cm,
+    bottom=2cm,
+    top=2.5cm
+]{geometry}
+\usepackage{setspace}
+\setstretch{1.5}
+\renewcommand{\baselinestretch}{1}
+\usepackage{mlmodern}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr, lastpage}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage[Conny]{fncychap}
+\usepackage{listings}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tablefootnote}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-5\p@}}{}{}
+\makeatother
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\pagestyle{fancy}
+\fancyhead{}
+\lhead{\includegraphics[width=7cm]{bk_name_en.png}}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+% \usepackage{xcolor}
+% \usepackage{mdframed}
+\titleformat{\subsubsection}[runin] % runin keeps it on the same line
+{\bfseries} % Format: bold text
+{} % No prefix, you can include numbering here if needed
+{0em} % Space between label and title text
+{} % Code before title
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+{
+\thispagestyle{empty} 
+\centering
+    \vspace*{1cm}
+    
+    \Large
+    \textbf{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH TRƯỜNG ĐẠI HỌC BÁCH KHOA}
+    
+    \vspace{0.5cm}
+    \Large
+    \textbf{Khoa Khoa Học Và Kỹ Thuật Máy Tính}
+    
+    \vspace{0.5cm}
+    
+    \includegraphics[width=0.5\textwidth]{01_logobachkhoasang.png}\\
+    \large
+    \vspace{0.5cm}
+    \textbf{Write-up Applied Cryptography}
+    \vspace{0.5cm}
+    \large
+    \\
+    \textbf{Name: Dương Bá Khang}
+    \vspace{0.5cm}
+    % \begin{table}[H]
+    %     \begin{tabular}{|l|r|p{5cm}|}
+    %         \vspace{0.5cm}
+    %         \hline
+    %         Cột 1 (căn trái) & Cột 2 (căn phải) & Cột 3 (căn đều) \\
+    %         \hline
+    %         Dữ liệu 1 & Dữ liệu 2 & Dữ liệu 3 được căn đều trong cột này và có thể tách dòng tự động nếu quá dài. \\
+    %         Dữ liệu 4 & Dữ liệu 5 & Dữ liệu 6 cũng vậy. \\
+    %         \hline
+    %     \end{tabular}
+    % \end{table}
+    \\
+    \textbf{Student ID: 2311403} 
+    \vfill
+    
+    \normalsize
+    Thành phố Hồ Chí Minh, tháng 9 năm 2025
+    
+}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\tableofcontents
+\newpage
+
+\chapter{Specification}
+\begin{spacing}{1.5}
+\section{Mục tiêu dự án}
+\hspace{0.5cm}Dự án “Hệ thống hỗ trợ Tutor tại Trường ĐH Bách Khoa – ĐHQG TP.HCM (HCMUT)” nhằm:
+\begin{enumerate}
+    \item Quản lý và vận hành tập trung chương trình Tutor/Sinh viên của nhà trường một cách hiệu quả, hiện đại và có khả năng mở rộng.
+    \item Cho phép quản lý hồ sơ Tutor/Sinh viên, đăng ký tham gia, lựa chọn hoặc gợi ý tutor, thiết lập và điều phối lịch hẹn (trực tiếp/online) kèm nhắc lịch tự động.
+    \item Hỗ trợ theo dõi tiến độ – phản hồi – đánh giá để khoa/bộ môn, Phòng Đào tạo và Phòng CTSV khai thác dữ liệu, tối ưu phân bổ nguồn lực và xét điểm rèn luyện/học bổng.
+\end{enumerate}
+\hspace{0.5cm}Dự án có thể được mở rộng với việc tích hợp AI tùy theo nhu cầu và nguồn lực như (1) Ghép cặp tutor – sinh viên thông minh: hệ thống sử dụng kỹ thuật AI để gợi ý ghép cặp. (2) Cộng đồng trực tuyến cho tutor – mentee. (3) Chương trình tutor học thuật và phi học thuật.  (4) Hỗ trợ học tập cá nhân hóa
+
+\section{Kết quả chính}
+\hspace{0.5cm}Các kết quả chính của dự án bao gồm một nền tảng web đáp ứng đa thiết bị dành cho sinh viên, tutor và điều phối viên; mô-đun quản lý hồ sơ và quy trình đăng ký/duyệt tham gia chương trình; mô-đun đặt, hủy, dời lịch hẹn (trực tiếp hoặc trực tuyến) kèm hệ thống thông báo và nhắc lịch tự động; mô-đun thu thập phản hồi, thống kê tiến độ và sinh báo cáo phục vụ khoa, bộ môn, Phòng Đào tạo và Phòng CTSV; tích hợp hạ tầng sẵn có của HCMUT (SSO, DATACORE và thư viện số) để đồng bộ dữ liệu và cung cấp học liệu; cùng bộ tài liệu đặc tả, thiết kế, giao diện mẫu, kịch bản kiểm thử và phiên bản MVP hoàn chỉnh cho luồng đăng nhập – đăng ký – đặt lịch – phản hồi.
+
+\section{Tiêu chuẩn kỹ thuật}
+\begin{enumerate}
+    \item Xác thực và Phân quyền: bắt buộc tích hợp HCMUT-SSO; phân quyền dựa trên vai trò (student / tutor / coordinator / department chair / admin) đồng bộ từ HCMUT-DATACORE.
+    \item Đồng bộ dữ liệu: sử dụng dịch vụ chia sẻ dữ liệu của DATACORE để cập nhật hồ sơ người dùng theo thời gian thực, giảm nhập liệu thủ công.
+    \item Tài liệu học liệu: kết nối HCMUT-LIBRARY để tra cứu – chia sẻ giáo trình số chính thống cho mỗi buổi tư vấn.
+    \item Kiến trúc và Triển khai: Ứng dụng web-based (SPA hoặc MPA), REST/GraphQL API, database quan hệ (PostgreSQL/MySQL) và container hóa (Docker). Công nghệ cụ thể sẽ được lựa chọn dựa trên tiêu chí bảo mật, khả năng mở rộng và mức độ hỗ trợ của hạ tầng trường.
+    \item Bảo mật và Tuân thủ: truyền dữ liệu qua HTTPS, tuân thủ quy định bảo vệ dữ liệu cá nhân; logging toàn bộ phiên đăng nhập, thao tác nhạy cảm.
+\end{enumerate}
+
+\end{spacing}
+
+\end{document}
